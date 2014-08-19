@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Bookmark</title>
+    <meta charset="utf-8">
+<style>
+  .md {display:none}
+</style>
+  </head>
+  <body>
+
+    <pre id="cal" class="md">
+* [Cozi • Calendar](http://my.cozi.com/calendar/) 
+* [四季行程](http://www.4season.org.tw/html/schedule/schedulelist.php)
+    </pre>
+    <pre id="man" class="md">
+* [Corona Docs: API](http://docs.coronalabs.com/api/index.html)
+    </pre>
+    <pre id="lang" class="md">
+* [日语在线翻译 - 沪江小D - 日语词典](http://dict.hjenglish.com/jp/)
+* [ひらがなめがね](http://www.hiragana.jp/ja/)
+* [Englisch - Deutsch Wörterbuch - leo.org: Startseite](http://dict.leo.org/)
+* [SpanishDict | English to Spanish Translation, Dictionary, Translator](http://www.spanishdict.com/)
+* [Google 翻譯](https://translate.google.com.tw/)
+    </pre>
+    <pre id="db" class="md">
+* [臺灣生命大百科 | Taiwan Encyclopedia of Life](http://eol.taibif.tw/)
+    </pre>
+    <pre id="tools" class="md">
+* [html5-boilerplate](https://github.com/h5bp/html5-boilerplate/blob/master/index.html)
+* [Web Hosting Search Tool, Reviews & More at WhoIsHostingThis.com](http://www.whoishostingthis.com/#.)
+    </pre>
+<script type="text/javascript">
+  var s = ""
+  var items = document.getElementsByClassName("md");
+  for (i = 0; i < items.length; i++) { 
+    s += "<h3>" + items[i].id + "</h3>";
+    var rows = items[i].innerHTML.split('\n')
+    for (j = 0; j < rows.length; j++) {
+      var r = rows[j].trim();
+
+      if (r != "") { 
+        var row = r.split('](');
+        s += "<li><a href=\""+row[1].slice(0, -1)+"\">"+row[0].slice(3)+"</a></li>"
+      }
+    }
+  }
+  //console.log(s);
+  document.write(s);
+</script>
+    </ul>
+  </body>
+</html>
